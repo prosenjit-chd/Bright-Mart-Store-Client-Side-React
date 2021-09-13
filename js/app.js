@@ -20,14 +20,18 @@ const showProducts = (products) => {
       </div>
       <div class="card-body">
       <h5>${product.title}</h5>
-      <p>Category: ${product.category}</p>
+      <p><b>Category:</b> ${product.category}</p>
       <div class="card-details">
-      <span>Rating: <span><span>${product.rating.rate} <span>(${product.rating.count} People)</span></span>
+      <div class="rating-star">
+      <span class="fw-bold">${product.rating.rate} </span>
+       ${calCulateRatingStar(product.rating.rate, product.rating.count)}
+       <span class="text-muted"> (${product.rating.count})</span>
+       </div>
       </div>
       <h4>Price: $ ${product.price}</h4>
       </div>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">Add to cart</button>
-      <button id="details-btn" class="btn btn-secondary" onclick="displayProductDetails('${product.title}', '${product.description}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn"><i class="fas fa-cart-plus"></i> Add to cart</button>
+      <button id="details-btn" class="btn details-btn" onclick="displayProductDetails('${product.title}', '${product.description}')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-eye"></i> Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -106,4 +110,27 @@ const displayProductDetails = (title, description) => {
     </div>
   `
   modalDialog.innerHTML = modalConent;
+}
+
+//Start marking
+const calCulateRatingStar = (rate) => {
+  let fullStar = parseInt(rate);
+  let decPart = parseInt((rate + "").split(".")[1]) || 0;
+
+  let star = '';
+  for (let i = 0; i<fullStar; i++){
+    star += '<i class="fas fa-star"></i> ';
+  }
+  if (decPart < 8 && decPart > 2){
+    star += '<i class="fas fa-star-half-alt"></i> ';
+    fullStar += 1;
+  }
+  else if(decPart > 7){
+    star += '<i class="fas fa-star"></i> ';
+    fullStar += 1;
+  }
+  for (let j = fullStar; j < 5; j++) {
+    star += '<i class="far fa-star"></i> ';
+  }
+  return star;
 }

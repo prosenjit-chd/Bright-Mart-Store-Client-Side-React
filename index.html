@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bright Mart Store</title>
- <!-- CSS only -->
+   <!-- Font Awesome Link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!-- google Montserrat  font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +21,7 @@
 <body>
   <header>
     <!-- Website Title  -->
-    <h1 class="text-success text-center mt-3">Bright Mart <span class="text-primary">Store </span></h1>
+    <h1 class="text-success text-center mt-3">Bright Mart<span> Store </span></h1>
   </header>
   <main class="main">
     <div class="search-field">
@@ -27,7 +29,7 @@
         <div class="input-group mt-4 mb-4 w-50 mx-auto ">
           <!-- Search Field and button  -->
           <input id="search-field" type="text" class="form-control" placeholder="Search the product you want" aria-label="Search the book you want" aria-describedby="button-addon2">
-          <button id="search-btn" class="btn btn-outline-primary" type="button" id="button-search">Search</button>
+          <button id="search-btn" class="btn buy-now" type="button" id="button-search">Search</button>
       </div>
     </div>
     <!-- All products show here  -->
@@ -83,7 +85,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="buy-now btn text-center">Buy Now</button>
           </div>
         </div>
       </div>
@@ -95,7 +97,20 @@
       </div>
    </div>
   </main>
-  <footer></footer>
+  <footer class="bg-light footer-main">
+    <div class="container d-flex flex-md-row flex-column justify-content-between align-items-center ">
+        <div>
+            <small>
+                © 2021 Prosenjit Chowdhury. All Rights Reserved.
+            </small>
+        </div>
+        <div>
+            <small >
+               <span class="footer-element">Privacy</span> <Span class="footer-element">Terms</Span> <span class="footer-element">Feedback</span> <span class="footer-element">Support</span>
+            </small>
+        </div>
+    </div>
+</footer>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <!-- add javascript  enternal file  -->
