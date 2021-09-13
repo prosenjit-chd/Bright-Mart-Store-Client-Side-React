@@ -24,7 +24,7 @@ const showProducts = (products) => {
       <div class="card-details">
       <div class="rating-star">
       <span class="fw-bold">${product.rating.rate} </span>
-       ${calCulateRatingStar(product.rating.rate, product.rating.count)}
+       ${changeStar(product.rating.rate, product.rating.count)}
        <span class="text-muted"> (${product.rating.count})</span>
        </div>
       </div>
@@ -113,23 +113,23 @@ const displayProductDetails = (title, description) => {
 }
 
 //Start marking
-const calCulateRatingStar = (rate) => {
-  let fullStar = parseInt(rate);
-  let decPart = parseInt((rate + "").split(".")[1]) || 0;
+const changeStar = (rate) => {
+  let fullFilledStar = parseInt(rate);
+  let starPart = parseInt((rate + "").split(".")[1]) || 0;
 
   let star = '';
-  for (let i = 0; i<fullStar; i++){
+  for (let i = 0; i<fullFilledStar; i++){
     star += '<i class="fas fa-star"></i> ';
   }
-  if (decPart < 8 && decPart > 2){
+  if (starPart < 8 && starPart > 2){
     star += '<i class="fas fa-star-half-alt"></i> ';
-    fullStar += 1;
+    fullFilledStar += 1;
   }
-  else if(decPart > 7){
+  else if(starPart > 7){
     star += '<i class="fas fa-star"></i> ';
-    fullStar += 1;
+    fullFilledStar += 1;
   }
-  for (let j = fullStar; j < 5; j++) {
+  for (let j = fullFilledStar; j < 5; j++) {
     star += '<i class="far fa-star"></i> ';
   }
   return star;
